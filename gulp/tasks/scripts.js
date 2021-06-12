@@ -4,8 +4,8 @@ const argv = require('yargs').argv;
 
 module.exports = function script() {
   return gulp.src('src/assets/js/*.js')
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
+    // .pipe(babel({
+    //   presets: ['@babel/env']
+    // }))
     .pipe(gulp.dest('dist/assets/js/'));
 };

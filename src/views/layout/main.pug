@@ -2,7 +2,7 @@ include ../helpers/mixins
 block variables
 
 doctype html
-html(lang="uk")
+html(lang="ru")
 	head
 		meta(charset="utf-8")
 		title #{title}
@@ -15,6 +15,7 @@ html(lang="uk")
 		link(rel="stylesheet" type='text/css' href="./assets/css/style.css")
 	body
 		.wrapper
+			include ../modules/header/header
 			main.content
 				block content
 			include ../modules/footer/footer

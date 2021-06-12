@@ -11,9 +11,14 @@ module.exports = function styles() {
   return gulp.src('src/assets/styles/style.scss')
     .pipe(plumber())
     .pipe(gulpif(!argv.prod, sourcemaps.init()))
-    .pipe(scss())
+    .pipe(scss({
+      outputStyle: 'expanded',
+      indentType: "tab",
+      indentWidth: 1
+    }))
     .pipe(autoprefixer({
-      cascade: false
+      cascade: false,
+      overrideBrowserslist: ['last 5 versions']
     }))
     .pipe(gulpif(argv.prod, cleanCSS({
       debug: true,
