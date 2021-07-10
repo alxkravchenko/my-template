@@ -1,23 +1,23 @@
 @mixin maxw($point) {
 
 	@if $point == xl {
-		@media (max-width: 1200px) {@content;}
+		@media (max-width: 1199.98px) {@content;}
 	}
 
 	@if $point == lg {
-		@media (max-width: 992px) {@content;}
+		@media (max-width: 991.98px) {@content;}
 	}
 
 	@if $point == md {
-		@media (max-width: 768px) {@content;}
+		@media (max-width: 767.98px) {@content;}
 	}
 
 	@if $point == sm {
-		@media (max-width: 576px) {@content;}
+		@media (max-width: 575.98px) {@content;}
 	}
 
 	@if $point == xs {
-		@media (max-width: 375px) {@content;}
+		@media (max-width: 374.98px) {@content;}
 	}
 }
 
