@@ -21,6 +21,18 @@
 	}
 }
 
+@mixin pseudo() {
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+@mixin centered() {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 @function rem($size) {
 	@return $size / $root-font-size * 1rem;
 }
