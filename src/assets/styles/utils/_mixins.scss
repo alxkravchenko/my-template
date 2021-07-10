@@ -1,35 +1,32 @@
-@mixin box($width, $height: $width) {
-	width: $width;
-	height: $height;
-}
-@mixin cover-background {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
+@mixin maxw($point) {
 
-$units: 1px !default;
-@mixin screen($res-first, $res-last: $res-first) {
-	@if $res-first == $res-last {
-		@media screen and (max-width: if(unitless($res-first), ($res-first - 1) *$units, $res-first)) {
-			@content;
-		}
-	} @else if $res-first < $res-last {
-		@media screen and (min-width: if(unitless($res-first), $res-first*$units, $res-first)) and (max-width: if(unitless($res-last), $res-last*$units, $res-last)) {
+	@if $point == xl {
+		@media (max-width: 1200px) {
 			@content;
 		}
 	}
-}
-@mixin min-screen($res) {
-	@media screen and (min-width: if(unitless($res), $res*$units, $res)) {
-		@content;
+
+	@if $point == lg {
+		@media (max-width: 992px) {
+			@content;
+		}
 	}
-}
 
-@function max($numbers...) {
-	@return m#{a}x(#{$numbers});
-}
+	@if $point == md {
+		@media (max-width: 768px) {
+			@content;
+		}
+	}
 
-@function min($numbers...) {
-	@return m#{i}n(#{$numbers});
+	@if $point == sm {
+		@media (max-width: 576px) {
+			@content;
+		}
+	}
+
+	@if $point == xs {
+		@media (max-width: 375px) {
+			@content;
+		}
+	}
 }

@@ -19,7 +19,7 @@ module.exports = function serve(cb) {
     cors: true
   });
 
-  gulp.watch('src/assets/images/*/*.{gif,png,jpg,jpeg,svg,webp}', gulp.series(imageMinify)).on('change', server.reload);
+  gulp.watch(['src/assets/images/*/*.{gif,png,jpg,jpeg,svg,webp}', 'src/assets/images/*.{gif,png,jpg,jpeg,svg,webp}'], gulp.series(imageMinify)).on('change', server.reload);
   gulp.watch('src/assets/images/sprite/svg/*.svg', gulp.series(svgSprite)).on('change', server.reload);
   gulp.watch('src/assets/styles/**/*.scss', gulp.series(styles)).on('change', server.reload);
   gulp.watch('src/assets/libs/**/*.css', gulp.series(csslibs)).on('change', server.reload);
