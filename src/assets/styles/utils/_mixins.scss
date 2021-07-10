@@ -24,7 +24,3 @@
 @function rem($size) {
 	@return $size / $root-font-size * 1rem;
 }
-
-@function rem($size) {
-	@return $size / $root-font-size * 1rem;
-}
